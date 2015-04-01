@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Screen Distance Calculator</title>
+    <meta charset="utf-8" />
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    
+
+    <!-- External JS / CSS -->
+    <script type="text/javascript" src="knockout-3.3.0.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+ 
+    <!-- Inline JS / CSS -->
+    <script type="text/javascript">
+    </script>
+
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Screen Calc</h2>
+
+        <p> Calculate optimum screen size from a given distance for a 16:9 screen using a few different methods </p>
+
+        Enter distance: <input data-bind="textInput: distance"> feet.
+        <hr>
+        Thx recommended screen size (diagonal): <strong data-bind="text: formatInches(sizeThx())"></strong><br>
+        Thx recommended screen range (diagonal): 
+        <!-- ko foreach: sizesThxRange -->
+            <strong data-bind="text: $data.size"></strong>" class </span> <span data-bind="if: $index() !== $parent.sizesThxRange().length - 1">,</span>
+        <!-- /ko -->
+        <!-- ko if: sizesThxRange().length === 0 -->
+            No range recommondation for this size screen.
+        <!-- /ko -->
+        <br>
+        SMPTE recommended screen size (diagonal): <strong data-bind="text: formatInches(sizeSmpte())"></strong><br>
+
+        <br><br>
+        <a href="http://en.wikipedia.org/wiki/Optimum_HDTV_viewing_distance">Source</a>
+
+    </div>
+
+
+</body>
+</html>
