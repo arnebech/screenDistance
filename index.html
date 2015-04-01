@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Screen Calc</h2>
+        <h2>Screen Distance Calculator</h2>
 
         <p> Calculate optimum screen size from a given distance for a 16:9 screen using a few different methods </p>
 
@@ -37,7 +37,7 @@
             <strong data-bind="text: $data.size"></strong>" class </span> <span data-bind="if: $index() !== $parent.sizesThxRange().length - 1">,</span>
         <!-- /ko -->
         <!-- ko if: sizesThxRange().length === 0 -->
-            No range recommondation for this size screen.
+            No size range recommendation for this distance.
         <!-- /ko -->
         <br>
         SMPTE recommended screen size (diagonal): <strong data-bind="text: formatInches(sizeSmpte())"></strong><br>
